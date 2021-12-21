@@ -6,8 +6,15 @@
   "author": "BuckB",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "dev": "ts-node --transpile-only src/server.ts"
+  },
   "dependencies": {
-    "express": "^4.17.2"
+    "@types/node": "^17.0.1",
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
