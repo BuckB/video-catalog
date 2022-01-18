@@ -18,10 +18,6 @@ export class CreateCategories1640826024899 implements MigrationInterface {
                         isUnique: true
                     },
                     {
-                        name: "description",
-                        type: "varchar"
-                    },
-                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
