@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateVideos1640834476492 implements MigrationInterface {
 
@@ -10,7 +10,9 @@ export class CreateVideos1640834476492 implements MigrationInterface {
                     {
                         name: "id",
                         type: "uuid",
-                        isPrimary: true
+                        isPrimary: true,
+                        generationStrategy: "uuid",
+                        default: "uuid_generate_v4()"
                     },
                     {
                         name: "title",
@@ -44,11 +46,12 @@ export class CreateVideos1640834476492 implements MigrationInterface {
                     }
                 ]
             })
-        )
+        );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.dropTable("videos");
+        await queryRunner.dropTable("videos_categories_categories");
     }
 
 }
