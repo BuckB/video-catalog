@@ -2,6 +2,7 @@
   "name": "video-catalog",
   "version": "1.0.0",
   "description": "Catalog of movies and series",
+  "packageManager": "yarn@3.1.1",
   "main": "index.js",
   "author": "BuckB",
   "license": "MIT",
