@@ -1,5 +1,5 @@
 import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Category } from "../category/Category";
+import { Category } from "./Category";
 
 @Entity("videos")
 export class Video {
