@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
 import { Video } from "./Video";
 
 @Entity("categories")
@@ -8,6 +8,7 @@ export class Category {
     id!: string;
 
     @Column()
+    @Unique()
     name!: string;
 
     @ManyToMany(() => Video, video => video.categories)
