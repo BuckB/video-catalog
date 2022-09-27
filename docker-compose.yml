@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  pg:
+    image: postgres:14.1-alpine
+    container_name: dev-postgres
+    network_mode: pg-network
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=devPostgres
+      - POSTGRES_DB=video-catalog
+    ports:
+      - '5432:5432'
+    volumes:
+      - ${HOME}/DSV/postgresql/data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: dev-pgadmin
+    network_mode: pg-network
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@email.com
+      - PGADMIN_DEFAULT_PASSWORD=devPostgres
+    ports:
+      - '15432:80'
